@@ -1,31 +1,27 @@
 ---
-import background from '../assets/background.svg';
 import { getCollection } from 'astro:content';
 
 const arts = await getCollection('art')
 
 ---
 
-<div class="p-20">
-	<img id="background" src={background.src} alt="" fetchpriority="high" />
-	<main>
-			<h1 class="text-6xl font-extrabold mb-3">
-          Conectá con la naturaleza
-        <span class="block"> a través del arte en acuarela</span>
-			</h1>
+    <h1 class="text-6xl font-extrabold mb-3">
+        Conectá con la naturaleza
+      <span class="block"> a través del arte en acuarela</span>
+    </h1>
 
-      <p class="mb-12">
-        Cada obra es una invitación a viajar y explorar el mundo desde una mirada creativa, 
-        <span class="block">creada con pasión y un profundo vínculo con los paisajes y culturas locales.</span>
-      </p>
+    <p class="mb-12">
+      Cada obra es una invitación a viajar y explorar el mundo desde una mirada creativa, 
+      <span class="block">creada con pasión y un profundo vínculo con los paisajes y culturas locales.</span>
+    </p>
 
   <section aria-label="Obras destacadas" >
     <div class="px-4 mx-auto max-w-screen-xl">
       <div class="grid gap-6 md:grid-cols-2">
           { arts.map ((ilustration) =>(
             <article class="flex">
-                <a href="#" class="mb-2 xl:mb-0 transition hover:scale-110">
-                      <img src={ilustration.data.img} alt={ilustration.data.title} class="mr-5 w-48 w-full-rounded-lg"/>
+              <a href={`/art/${ilustration.slug}`} class="mb-2 xl:mb-0 transition hover:scale-110">
+                      <img src={ilustration.data.img} alt={ilustration.data.title} class="mr-8 w-48 w-full-rounded-lg"/>
                 </a>
                 <div class="flex flex-col justify-center">
                     <h2 class="mb-2 text-2xl font-bold leading-tight">{ilustration.data.title}</h2> 
@@ -37,36 +33,4 @@ const arts = await getCollection('art')
     </div>
     </div>
   </section>
-</main>
-</div>
 
-<style>
-	#background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		filter: blur(100px);
-	}
-
-	main {
-    color: #553566;
-	}
-
-	
-	@media screen and (max-height: 368px) {
-		#news {
-			display: none;
-		}
-	}
-
-	@media screen and (max-width: 768px) {
-		#container {
-			display: flex;
-			flex-direction: column;
-		}
-
-	}
-</style>

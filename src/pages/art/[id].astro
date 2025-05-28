@@ -1,0 +1,23 @@
+---
+import {getCollection} from "astro:content";
+import Layout from '../../layouts/Layout.astro';
+
+//devuelve las rutas con la informacion de cada una
+export async function getStaticPaths() {
+  const arts= await getCollection("art")
+
+  return arts.map((art)=>({
+    params: {id:art.slug},
+    props: {art}
+  }))
+
+}
+const {art} = Astro.props
+const {data}= art
+const {title}=data
+
+---
+
+<Layout>
+    <h1>{title}</h1>
+</Layout>
