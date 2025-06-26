@@ -4,17 +4,17 @@ import Layout from '../../layouts/Layout.astro';
 
 //devuelve las rutas con la informacion de cada una
 export async function getStaticPaths() {
-  const arts= await getCollection("art")
+  const portfolio= await getCollection("portfolio")
 
-  return arts.map((art)=>({
-    params: {id:art.slug},
-    props: {art}
+  return portfolio.map((portfolio)=>({
+    params: {id:portfolio.slug},
+    props: {portfolio}
   }))
 
 }
-const {art} = Astro.props
-const {data}= art
-const {title}=data
+const {portfolio} = Astro.props
+const {data}= portfolio
+const {title}= data
 
 ---
 

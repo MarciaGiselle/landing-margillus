@@ -1,36 +1,256 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
-const arts = await getCollection('art')
-
+const portfolio = await getCollection(`portfolio`);
 ---
 
-    <h1 class="text-6xl font-extrabold mb-3">
-        Conectá con la naturaleza
-      <span class="block"> a través del arte en acuarela</span>
-    </h1>
+<!-- Navegación fija -->
+<header class="fixed top-0 left-0 right-0 bg-white shadow z-50">
+  <nav class="max-w-3xl mx-auto flex justify-center space-x-6 py-4">
+    <a href="#experiencia" class="text-gray-700 hover:text-blue-600 font-medium"
+      >Experiencia</a
+    >
+    <a href="#proyectos" class="text-gray-700 hover:text-blue-600 font-medium"
+      >Proyectos</a
+    >
+    <a href="#sobremi" class="text-gray-700 hover:text-blue-600 font-medium"
+      >Sobre mí</a
+    >
+    <a href="#educacion" class="text-gray-700 hover:text-blue-600 font-medium"
+      >Educación</a
+    >
+    <a href="#contacto" class="text-gray-700 hover:text-blue-600 font-medium"
+      >Contacto</a
+    >
+  </nav>
+</header>
 
-    <p class="mb-12">
-      Cada obra es una invitación a viajar y explorar el mundo desde una mirada creativa, 
-      <span class="block">creada con pasión y un profundo vínculo con los paisajes y culturas locales.</span>
-    </p>
+<!-- Header -->
+<section>
+  <p
+    class="mb-4 text-sm text-gray-700 bg-white uppercase tracking-wide font-semibold py-1 px-4 inline-block rounded-full mx-auto"
+  >
+    Disponibilidad full-time · Incorporación inmediata
+  </p>
 
-  <section aria-label="Obras destacadas" >
-    <div class="px-4 mx-auto max-w-screen-xl">
-      <div class="grid gap-6 md:grid-cols-2">
-          { arts.map ((ilustration) =>(
-            <article class="flex">
-              <a href={`/art/${ilustration.slug}`} class="mb-2 xl:mb-0 transition hover:scale-110">
-                      <img src={ilustration.data.img} alt={ilustration.data.title} class="mr-8 w-48 w-full-rounded-lg"/>
-                </a>
-                <div class="flex flex-col justify-center">
-                    <h2 class="mb-2 text-2xl font-bold leading-tight">{ilustration.data.title}</h2> 
-                    <p class="mb-4 max-w-sm">{ilustration.data.description}</p>
-                    <span class="text-xs">{ilustration.data.dimensions}</span>
-                </div>
-            </article>
-          ))}
+  <h1 class="text-6xl font-extrabold mb-3 text-violet-950">¡Hola! Soy Mar.</h1>
+  <p class="pt-3 text-lg leading-relaxed text-gray-700 w-150">
+    Soy <span class="text-violet-900 font-medium"
+      >Diseñadora Gráfica y Técnica en Desarrollo de Aplicaciones</span
+    > de Buenos Aires, Argentina. Me interesa el <span
+      class="text-violet-900 font-medium">diseño UX/UI</span
+    > como herramienta para crear
+    <span class="text-violet-900 font-medium"
+      >experiencias accesibles y humanas</span
+    >.
+  </p>
+  <p class="pb-3 mt-2 text-lg leading-relaxed text-gray-700 w-150">
+    Tengo habilidades para el <span class="text-violet-900 font-medium"
+      >trabajo en equipo, comunicación clara y una mirada creativa y funcional</span
+    > sobre el diseño digital.
+  </p>
+
+  <div class="flex gap-4 mt-4">
+    <a
+      href="mailto:margisetoledo@gmail.com"
+      class="px-6 py-2 bg-violet-950 text-white rounded-3xl hover:bg-violet-800"
+      >Charlemos!</a
+    >
+    <a
+      href="https://www.linkedin.com/in/marcia-giselle-toledo/"
+      class="px-6 py-2 bg-violet-950 text-white rounded-3xl hover:bg-violet-800"
+      >LinkedIn</a
+    >
+  </div>
+</section>
+
+<!-- Experiencia laboral -->
+<section id="experiencia" class="scroll-mt-24">
+  <h2 class="text-2xl font-semibold mb-4">Experiencia laboral</h2>
+
+  <article class="mb-6">
+    <h3 class="font-bold">Diseñadora UX/UI Junior – RELP</h3>
+    <p class="text-sm text-gray-500">Remoto • Junio 2023 – Diciembre 2023</p>
+    <ul class="list-disc ml-6 mt-2 space-y-1">
+      <li>
+        Diseñé wireframes y mejoras funcionales para una plataforma SaaS del
+        sector de energías renovables.
+      </li>
+      <li>
+        Realicé presentaciones visuales para explicar funcionalidades a
+        clientes.
+      </li>
+      <li>
+        Redacté mensajes del sistema para mejorar la comunicación con usuarios.
+      </li>
+      <li>Coordiné reuniones diarias como Scrum Master.</li>
+    </ul>
+  </article>
+
+  <article class="mb-6">
+    <h3 class="font-bold">Desarrolladora front-end – RELP</h3>
+    <p class="text-sm text-gray-500">Remoto • Octubre 2022 – Julio 2023</p>
+    <ul class="list-disc ml-6 mt-2 space-y-1">
+      <li>Implementé componentes reutilizables en React con TypeScript.</li>
+      <li>Optimizaciones visuales para dispositivos móviles.</li>
+      <li>Documentación funcional y técnica.</li>
+      <li>Colaboración con el equipo UX para implementación de diseños.</li>
+    </ul>
+  </article>
+
+  <article>
+    <h3 class="font-bold">Desarrolladora Front-End (Pasantía) – NetOne</h3>
+    <p class="text-sm text-gray-500">Presencial • Agosto 2019 – Enero 2020</p>
+    <ul class="list-disc ml-6 mt-2 space-y-1">
+      <li>Colaboración en desarrollo frontend con Bootstrap y JavaScript.</li>
+      <li>Pruebas manuales en equipo para validación de módulos.</li>
+      <li>Experiencia en entornos reales de desarrollo.</li>
+    </ul>
+  </article>
+</section>
+
+<section id="proyectos" class="scroll-mt-24">
+  <h2 class="text-2xl font-semibold mb-4">Proyectos UX/UI</h2>
+  <div class="mx-auto max-w-screen-xl space-y-8">
+    {
+      portfolio.map((ilustration) => (
+        <article class="flex">
+          <a
+            href={`/portfolio/${ilustration.slug}`}
+            class="mb-2 xl:mb-0 transition hover:scale-110  rounded"
+          >
+            <img
+              src={ilustration.data.image}
+              alt={ilustration.data.title}
+              class="mr-8 w-48 w-full-rounded-lg"
+            />
+          </a>
+
+          <div class="flex flex-col justify-center">
+            <h3 class="mb-2 text-2xl font-bold leading-tight">
+              {ilustration.data.title}
+            </h3>
+            <p class="mb-4 max-w-sm">{ilustration.data.description}</p>
+            <p class="text-sm text-gray-500">
+              Herramientas: herramienta 1, herramienta 2
+            </p>
+
+            <div class="flex gap-4 mt-2">
+              <a
+                href={ilustration.data.link}
+                class="text-xs text-blue-600 underline"
+              >
+                Ver en Behance
+              </a>
+              <a href="#" class="text-xs text-blue-600 underline">
+                Preview
+              </a>
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<!-- Sobre mí -->
+<section id="sobremi" class="scroll-mt-24">
+  <h2 class="text-2xl font-semibold mb-4">Sobre mí</h2>
+  <p>
+    Soy Marcia Toledo, Diseñadora Gráfica, Ilustradora y Desarrolladora
+    Front-End.
+  </p>
+  <p class="mt-2">
+    Me formé en diseño y programación (Universidad de Morón y UNLaM) y encontré
+    en el desarrollo frontend una forma de combinar creatividad y tecnología
+    para construir soluciones.
+  </p>
+  <p class="mt-2">
+    Tengo experiencia con React, Next.js, TypeScript y diseño UX/UI: usabilidad,
+    wireframes, entrevistas, documentación funcional y diseño de interfaces con
+    Figma.
+  </p>
+  <p class="mt-2">
+    Me interesa especialmente trabajar en proyectos con impacto social,
+    ambiental o educativo.
+  </p>
+  <img
+    src="/ruta/a/mi-imagen.jpg"
+    alt="Marcia Toledo"
+    class="mt-4 rounded-full w-32 h-32 mx-auto"
+  />
+</section>
+
+<!-- Educación -->
+<section id="educacion" class="scroll-mt-24">
+  <h2 class="text-2xl font-semibold mb-4">Educación</h2>
+  <ul class="list-disc ml-6 space-y-1">
+    <li>
+      Tecnicatura en desarrollo de aplicaciones móviles – UNLaM (2018-2021)
+    </li>
+    <li>Formación en emprendedurismo – Mujer Financiera (2024)</li>
+    <li>Tecnicatura en diseño gráfico – Universidad de Morón (2013-2016)</li>
+    <li>Curso de React & Hooks – Udemy (2020)</li>
+    <li>
+      <a
+        href="https://linktr.ee/portfolioToledo_ReactProjects"
+        class="text-blue-600 underline">Ver trabajos</a
+      >
+    </li>
+  </ul>
+</section>
+
+<!-- Herramientas y habilidades -->
+<section>
+  <h2 class="text-2xl font-semibold mb-4">Herramientas y habilidades</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div>
+      <h3 class="font-semibold">Diseño y prototipado</h3>
+      <p>Figma, Illustrator, Photoshop, Responsive Design, UX/UI</p>
     </div>
+    <div>
+      <h3 class="font-semibold">Lenguajes y Frameworks</h3>
+      <p>
+        JavaScript, TypeScript, React, Redux, HTML, CSS, Bootstrap, Java, SQL
+      </p>
     </div>
-  </section>
+    <div>
+      <h3 class="font-semibold">Metodologías y herramientas</h3>
+      <p>
+        Scrum, Jira, Git, Kanban, Documentación técnica, Design Thinking, MVC,
+        Netlify
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold">Soft skills</h3>
+      <p>
+        Proactividad, Trabajo en equipo, Curiosidad, Comunicación clara,
+        Adaptabilidad, Autonomía
+      </p>
+    </div>
+  </div>
+</section>
 
+<!-- Links -->
+<section id="contacto" class="scroll-mt-24">
+  <h2 class="text-2xl font-semibold mb-4">Contacto</h2>
+  <ul class="space-y-1">
+    <li>
+      <a href="https://github.com/MarciaGiselle" class="text-blue-600 underline"
+        >GitHub</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://www.linkedin.com/in/marcia-giselle-toledo/"
+        class="text-blue-600 underline">LinkedIn</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://www.behance.net/margisetoledo"
+        class="text-blue-600 underline">Behance</a
+      >
+    </li>
+  </ul>
+</section>
