@@ -28,24 +28,25 @@ const portfolio = await getCollection(`portfolio`);
 <!-- Header -->
 <section>
   <p
-    class="mb-4 text-sm text-gray-700 bg-white uppercase tracking-wide font-semibold py-1 px-4 inline-block rounded-full mx-auto"
+    class="mb-5 text-sm text-gray-700 bg-white uppercase tracking-wide font-semibold py-1 px-4 inline-flex items-center gap-2 rounded-full mx-auto"
   >
-    Disponibilidad full-time · Incorporación inmediata
+    <span class="w-2 h-2 bg-green-600 rounded-full animate-ping"></span>
+    Disponibilidad full-time · Lista para nuevos desafíos
   </p>
 
   <h1 class="text-6xl font-extrabold mb-3 text-violet-950">¡Hola! Soy Mar.</h1>
   <p class="pt-3 text-lg leading-relaxed text-gray-700 w-150">
-    Soy <span class="text-violet-900 font-medium"
+    Soy <span class="text-violet-800 font-medium"
       >Diseñadora Gráfica y Técnica en Desarrollo de Aplicaciones</span
     > de Buenos Aires, Argentina. Me interesa el <span
-      class="text-violet-900 font-medium">diseño UX/UI</span
+      class="text-violet-800 font-medium">diseño UX/UI</span
     > como herramienta para crear
-    <span class="text-violet-900 font-medium"
+    <span class="text-violet-800 font-medium"
       >experiencias accesibles y humanas</span
     >.
   </p>
   <p class="pb-3 mt-2 text-lg leading-relaxed text-gray-700 w-150">
-    Tengo habilidades para el <span class="text-violet-900 font-medium"
+    Tengo habilidades para el <span class="text-violet-800 font-medium"
       >trabajo en equipo, comunicación clara y una mirada creativa y funcional</span
     > sobre el diseño digital.
   </p>
@@ -53,64 +54,129 @@ const portfolio = await getCollection(`portfolio`);
   <div class="flex gap-4 mt-4">
     <a
       href="mailto:margisetoledo@gmail.com"
-      class="px-6 py-2 bg-violet-950 text-white rounded-3xl hover:bg-violet-800"
-      >Charlemos!</a
+      class="px-6 py-2 bg-green-800 text-white rounded-3xl hover:bg-violet-800 transition-colors duration-300 ease-in-out"
     >
+      ¡Charlemos!
+    </a>
     <a
       href="https://www.linkedin.com/in/marcia-giselle-toledo/"
-      class="px-6 py-2 bg-violet-950 text-white rounded-3xl hover:bg-violet-800"
+      class="px-6 py-2 bg-green-800 text-white rounded-3xl hover:bg-violet-800 transition-colors duration-300 ease-in-out"
       >LinkedIn</a
     >
   </div>
 </section>
 
-<!-- Experiencia laboral -->
 <section id="experiencia" class="scroll-mt-24">
-  <h2 class="text-2xl font-semibold mb-4">Experiencia laboral</h2>
+  <h2 class="text-2xl font-semibold mb-6 text-violet-950">
+    Experiencia laboral
+  </h2>
 
-  <article class="mb-6">
-    <h3 class="font-bold">Diseñadora UX/UI Junior – RELP</h3>
-    <p class="text-sm text-gray-500">Remoto • Junio 2023 – Diciembre 2023</p>
-    <ul class="list-disc ml-6 mt-2 space-y-1">
+  <!-- Proyecto Margillus -->
+  <article class="mb-10">
+    <h3 class="text-base font-semibold text-violet-900">Ilustradora</h3>
+    <p class="text-sm text-gray-700">
+      <span class="font-medium">Margillus</span> · Profesional independiente
+    </p>
+    <p class="text-sm text-gray-500">Sept. 2024 – Actualidad · 10 meses</p>
+    <p class="text-sm text-gray-500 mb-2">
+      Provincia de Buenos Aires, Argentina · En remoto
+    </p>
+    <p class="text-gray-700 mb-2">
+      Proyecto personal en el que combino arte, comunicación visual y contenido
+      digital con propósito.
+    </p>
+    <ul class="list-disc ml-5 text-gray-700 space-y-1 text-sm">
       <li>
-        Diseñé wireframes y mejoras funcionales para una plataforma SaaS del
-        sector de energías renovables.
+        Creo láminas ilustradas en acuarela inspiradas en la naturaleza, que
+        transformo en productos impresos.
       </li>
       <li>
-        Realicé presentaciones visuales para explicar funcionalidades a
+        Desarrollo contenido visual para redes sociales, tutoriales en YouTube y
+        campañas colaborativas.
+      </li>
+      <li>
+        Diseño y gestiono mi tienda online (productos, envíos, promociones).
+      </li>
+      <li>
+        Edición de video, planificación de lanzamientos y formación continua en
+        emprendimiento creativo.
+      </li>
+    </ul>
+  </article>
+
+  <!-- RELP UX/UI -->
+  <article class="mb-10">
+    <h3 class="text-base font-semibold text-violet-900">
+      Diseñadora UX/UI Junior
+    </h3>
+    <p class="text-sm text-gray-700">
+      <span class="font-medium">RELP</span> · Tiempo parcial
+    </p>
+    <p class="text-sm text-gray-500">Junio 2023 – Diciembre 2023 · 7 meses</p>
+    <p class="text-sm text-gray-500 mb-2">Remoto</p>
+    <ul class="list-disc ml-5 text-gray-700 space-y-1 text-sm">
+      <li>
+        Diseñé wireframes y mejoras funcionales para una plataforma SaaS de
+        energías renovables.
+      </li>
+      <li>
+        Realicé presentaciones visuales claras para explicar funcionalidades a
         clientes.
       </li>
       <li>
-        Redacté mensajes del sistema para mejorar la comunicación con usuarios.
+        Redacté mensajes del sistema mejorando la comunicación con usuarios.
       </li>
-      <li>Coordiné reuniones diarias como Scrum Master.</li>
+      <li>
+        Coordiné reuniones como Scrum Master, optimizando la comunicación entre
+        equipos.
+      </li>
     </ul>
   </article>
 
-  <article class="mb-6">
-    <h3 class="font-bold">Desarrolladora front-end – RELP</h3>
-    <p class="text-sm text-gray-500">Remoto • Octubre 2022 – Julio 2023</p>
-    <ul class="list-disc ml-6 mt-2 space-y-1">
+  <!-- RELP Front-end -->
+  <article class="mb-10">
+    <h3 class="text-base font-semibold text-violet-900">
+      Desarrolladora Front-End
+    </h3>
+    <p class="text-sm text-gray-700">
+      <span class="font-medium">RELP</span> · Tiempo parcial
+    </p>
+    <p class="text-sm text-gray-500">Octubre 2022 – Julio 2023 · 10 meses</p>
+    <p class="text-sm text-gray-500 mb-2">Remoto</p>
+    <ul class="list-disc ml-5 text-gray-700 space-y-1 text-sm">
       <li>Implementé componentes reutilizables en React con TypeScript.</li>
-      <li>Optimizaciones visuales para dispositivos móviles.</li>
-      <li>Documentación funcional y técnica.</li>
-      <li>Colaboración con el equipo UX para implementación de diseños.</li>
+      <li>Mejoré visuales y funcionalidades para experiencia móvil.</li>
+      <li>Documenté requerimientos funcionales y técnicos.</li>
+      <li>
+        Colaboré con UX para transformar diseños en interfaces funcionales.
+      </li>
     </ul>
   </article>
 
+  <!-- NetOne -->
   <article>
-    <h3 class="font-bold">Desarrolladora Front-End (Pasantía) – NetOne</h3>
-    <p class="text-sm text-gray-500">Presencial • Agosto 2019 – Enero 2020</p>
-    <ul class="list-disc ml-6 mt-2 space-y-1">
-      <li>Colaboración en desarrollo frontend con Bootstrap y JavaScript.</li>
-      <li>Pruebas manuales en equipo para validación de módulos.</li>
-      <li>Experiencia en entornos reales de desarrollo.</li>
+    <h3 class="text-base font-semibold text-violet-900">
+      Desarrolladora Front-End (Pasantía)
+    </h3>
+    <p class="text-sm text-gray-700"><span class="font-medium">NetOne</span></p>
+    <p class="text-sm text-gray-500">Agosto 2019 – Enero 2020 · 6 meses</p>
+    <p class="text-sm text-gray-500 mb-2">Presencial</p>
+    <ul class="list-disc ml-5 text-gray-700 space-y-1 text-sm">
+      <li>
+        Desarrollé frontend con Bootstrap y JavaScript, y colaboré con backend
+        en Java (Hibernate).
+      </li>
+      <li>Realicé pruebas manuales en equipo para asegurar funcionalidad.</li>
+      <li>
+        Adquirí experiencia en entornos reales de desarrollo y trabajo
+        colaborativo.
+      </li>
     </ul>
   </article>
 </section>
 
 <section id="proyectos" class="scroll-mt-24">
-  <h2 class="text-2xl font-semibold mb-4">Proyectos UX/UI</h2>
+  <h2 class="text-2xl font-semibold mb-4 text-violet-950">Proyectos UX/UI</h2>
   <div class="mx-auto max-w-screen-xl space-y-8">
     {
       portfolio.map((ilustration) => (
